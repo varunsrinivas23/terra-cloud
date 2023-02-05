@@ -22,7 +22,7 @@ pipeline {
                  script{
                         dir("terraform")
                         {
-                            git "https://github.com/Tejasks16/terra-cloud.git"
+                            sudo git clone "https://github.com/Tejasks16/terra-cloud.git"
                         }
                     }
                 }
