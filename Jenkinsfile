@@ -22,7 +22,9 @@ pipeline {
                  script{
                         dir("envival")
                         {
-                            sudo git clone "https://github.com/Tejasks16/terra-cloud.git"
+                            sh("""
+                                sudo git clone "https://github.com/Tejasks16/terra-cloud.git"
+                             """)
                         }
                     }
                 }
