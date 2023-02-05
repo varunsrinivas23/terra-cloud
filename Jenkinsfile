@@ -18,6 +18,11 @@ pipeline {
 
     stages {
         stage('checkout') {
+            when {
+                not {
+                    equals expected: true, actual: params.destroy
+                }
+            }
             steps {
                  script{
                         dir("terraform")
