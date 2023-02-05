@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'environment', defaultValue: 'terraform', description: 'Workspace/environment file to use for deployment')
+        string(name: 'envival', defaultValue: 'terraform', description: 'Workspace/environment file to use for deployment')
         booleanParam(name: 'autoApprove', defaultValue: false, description: 'Automatically run apply after generating plan?')
         booleanParam(name: 'destroy', defaultValue: false, description: 'Destroy Terraform build?')
 
@@ -20,7 +20,7 @@ pipeline {
         stage('checkout') {
             steps {
                  script{
-                        dir("terraform")
+                        dir("${envival}")
                         {
                             sudo git clone "https://github.com/Tejasks16/terra-cloud.git"
                         }
