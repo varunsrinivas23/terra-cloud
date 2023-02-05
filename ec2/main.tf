@@ -46,6 +46,7 @@ resource "aws_instance" "ourfirst" {
   availability_zone = "ap-south-1a"
   instance_type = "t2.micro"
   security_groups = ["${aws_security_group.webserver_access.name}"]
+  user_data = filebase64("install_httpd.sh")
   key_name = "zoomkey"
   tags = {
     Name  = "ec2-test"
