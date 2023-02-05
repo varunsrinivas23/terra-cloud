@@ -20,7 +20,7 @@ pipeline {
         stage('checkout') {
             steps {
                  script{
-                        dir("${envival}")
+                        dir(${envival})
                         {
                             sudo git clone "https://github.com/Tejasks16/terra-cloud.git"
                         }
