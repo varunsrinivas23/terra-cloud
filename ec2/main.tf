@@ -33,6 +33,7 @@ resource "aws_instance" "ourfirst" {
   instance_type = "t2.micro"
   security_groups = ["${aws_security_group.webserver_access.name}"]
   key_name = "zoomkey"
+  user_data = filebase64("install_apache.sh")
   tags = {
     Name  = "ec2-test"
     Location = "Mumbai"
