@@ -38,7 +38,7 @@ pipeline {
         stage('Plan') {
             when {
                 not {
-                    equals expected: true, actual: params.destroy
+                    equals expected: true , actual: params.destroy
                 }
             }
             
