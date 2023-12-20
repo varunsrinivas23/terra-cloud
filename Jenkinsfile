@@ -28,6 +28,7 @@ pipeline {
                         dir("terraform")
                         {
                             sh("""
+                            rm -rf terra-cloud
                                 git clone "https://github.com/varunsrinivas23/terra-cloud.git"
                              """)
                         }
@@ -53,7 +54,7 @@ pipeline {
         stage('Approval') {
            when {
                not {
-                   equals expected: true, actual: params.autoApprove
+                   equals expected: false, actual: params.autoApprove
                }
                not {
                     equals expected: true, actual: params.destroy
